@@ -1,0 +1,183 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Módulo predeterminado",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/libros": {
+      "get": {
+        "summary": "Obtener los libros",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": [
+                  {
+                    "id": 1,
+                    "isbn": "123-ABC",
+                    "titulo": "Programación en java",
+                    "autor": "Pepe el grillo",
+                    "anioPublicacion": 2025,
+                    "disponible": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "Crear libro",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "isbn": "123-ABC",
+                "titulo": "Avengers",
+                "autor": "MArvel",
+                "anioPublicacion": 2021,
+                "disponible": true
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "id": 2,
+                  "isbn": "123-ABC",
+                  "titulo": "Avengers",
+                  "autor": "MArvel",
+                  "anioPublicacion": 2021,
+                  "disponible": true
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/libros/1": {
+      "get": {
+        "summary": "obtener libro por ID",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "id": 1,
+                  "isbn": "123-ABC",
+                  "titulo": "Programación en java",
+                  "autor": "Pepe el grillo",
+                  "anioPublicacion": 2025,
+                  "disponible": true
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/libros/buscar": {
+      "get": {
+        "summary": "Buscar por autor y anio",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "autor",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "Pepe El Grillo",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anioPublicacion",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": 2025,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": [
+                  {
+                    "id": 1,
+                    "isbn": "123-ABC",
+                    "titulo": "Programación en java",
+                    "autor": "Pepe el grillo",
+                    "anioPublicacion": 2025,
+                    "disponible": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
+}
